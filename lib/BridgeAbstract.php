@@ -131,7 +131,7 @@ abstract class BridgeAbstract
             }
 
             if (isset($optionValue['required']) && $optionValue['required'] === true) {
-                throw new \Exception(sprintf('Missing configuration option: %s', $optionName));
+                throw new \Exception(sprintf('Missing configuration option: %s %s ', $optionName, $section));
             } elseif (isset($optionValue['defaultValue'])) {
                 $this->configuration[$optionName] = $optionValue['defaultValue'];
             }
